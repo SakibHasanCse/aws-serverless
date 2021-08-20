@@ -18,8 +18,26 @@ functions:
     events:
       - http:
           method: POST
-          path: /create-auction
+          path: /auction
+  getAuctions:
+    handler: src/handlers/getAuctions.handler
+    events:
+      - http:
+        method: GET
+        path: /auctions
 
+  getAuction:
+    handler: src/handlers/getAuction.handler
+    events:
+      - http:
+        method: GET
+        path: /auction/{id}
+   updateAuction:
+    handler: src/handlers/updateAuction.handler
+    events:
+      - http:
+        method: PATCH
+        path: /auction/{id}
 custom:
   bundle:
     linting: false

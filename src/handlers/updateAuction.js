@@ -1,7 +1,8 @@
 import { v4 as uuid } from 'uuid';
 import createError from 'http-errors'
 import commonMiddlware from '../lib/commonMiddlware'
-async function createAuction(event, context) {
+async function updateAuction(event, context) {
+  const { id } = event.pathParameters;
   const { title, description } = event.body;
 
   const date = new Date().toISOString();
@@ -15,6 +16,6 @@ async function createAuction(event, context) {
   };
 }
 
-export const handler = commonMiddlware(createAuction)
+export const handler = commonMiddlware(updateAuction)
 
 
