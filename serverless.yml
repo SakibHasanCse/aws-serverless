@@ -19,6 +19,7 @@ functions:
       - http:
           method: POST
           path: /auction
+          authorizer: auth
   getAuctions:
     handler: src/handlers/getAuctions.handler
     events:
